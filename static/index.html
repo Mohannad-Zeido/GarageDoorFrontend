@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Garage Controls</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="garage.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+
+    <script src="js/main.js"></script>
+  </head>
+
+  <body style="background-color:#fefbe9;"  onload="checkCookie()">
+
+    <div class="container square-box d-flex justify-content-center align-items-center">
+
+      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+
+      <div class="bg-black container w-100">
+        <h1 class="text-center text-dark">Garage Remote</h1>
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/open" target="dummyframe" onsubmit="return addPass()" method="post">
+          <input type="hidden" name="pass">
+          <input type="hidden" name="command" value="open">
+          <input type="submit" class="w-100 btn btn-light text-dark" style="background-color:#e1eedd;" value="Open">
+        </form>
+
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/stop" target="dummyframe" onsubmit="return addPass()" method="post">
+          <input type="hidden" name="pass">
+          <input type="hidden" name="command" value="stop">
+          <input type="submit" class="w-100 btn btn-light text-dark"  style="background-color:#EEE0DE;"  value="Stop">
+        </form>
+
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/close" target="dummyframe" onsubmit="return addPass()" method="post">
+          <input type="hidden" name="pass">
+          <input type="hidden" name="command" value="close">
+          <input type="submit" class="w-100  btn btn-light text-dark" style="background-color:#EBDEEE;" value="Close">
+        </form>
+
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/light" target="dummyframe" onsubmit="return addPass()" method="post">
+          <input type="hidden" name="pass">
+          <input type="hidden" name="command" value="light">
+          <input type="submit" class="w-100 btn btn-light text-dark" style="background-color:#DEE0EE;" value="Light">
+        </form>
+
+        <form class="py-1 float-right" name="myForm" onsubmit="return resetPass()">
+          <input type="submit" class="btn btn-light text-dark btn-sm" style="background-color:#EEDEED;" value="Reset">
+        </form>
+      </div>
+
+
+    </div>
+  </body>
+</html>

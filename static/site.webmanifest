@@ -1,0 +1,12 @@
+{
+  "short_name": "",
+  "name": "",
+  "icons": [{
+    "src": "garage.png",
+    "type": "image/png",
+    "sizes": "1282x128zzz"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa"
+}
