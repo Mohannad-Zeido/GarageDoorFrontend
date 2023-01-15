@@ -35,25 +35,25 @@
 
       <div class="bg-black container w-100">
         <h1 class="text-center text-dark">Garage Remote</h1>
-        <form class="py-1" name="myForm" action="https://192.168.0.13:7610/open" target="dummyframe" onsubmit="return addPass()" method="post">
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/open" target="dummyframe" onsubmit="return addPass()" method="post">
           <input type="hidden" name="pass">
           <input type="hidden" name="command" value="open">
           <input type="submit" class="w-100 btn btn-success text-light btn-lg" style="height: 90px;" value="Open">
         </form>
 
-        <form class="py-1" name="myForm" action="https://192.168.0.13:7610/stop" target="dummyframe" onsubmit="return addPass()" method="post">
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/stop" target="dummyframe" onsubmit="return addPass()" method="post">
           <input type="hidden" name="pass">
           <input type="hidden" name="command" value="stop">
           <input type="submit" class="w-100 btn btn-warning text-light btn-lg" style="height: 90px;" value="Stop">
         </form>
 
-        <form class="py-1" name="myForm" action="https://192.168.0.13:7610/close" target="dummyframe" onsubmit="return addPass()" method="post">
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/close" target="dummyframe" onsubmit="return addPass()" method="post">
           <input type="hidden" name="pass">
           <input type="hidden" name="command" value="close">
           <input type="submit" class="w-100  btn btn-danger text-light btn-lg" style="height: 90px;" value="Close">
         </form>
 
-        <form class="py-1" name="myForm" action="https://192.168.0.13:7610/light" target="dummyframe" onsubmit="return addPass()" method="post">
+        <form class="py-1" name="myForm" action="http://192.168.0.13:7610/light" target="dummyframe" onsubmit="return addPass()" method="post">
           <input type="hidden" name="pass">
           <input type="hidden" name="command" value="light">
           <input type="submit" class="w-100 btn btn-light text-dark " style="background-color:#DEE0EE;" value="Light">
