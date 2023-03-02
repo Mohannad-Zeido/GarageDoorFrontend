@@ -6,6 +6,48 @@ function checkCookie() {
       setCookie("passcode", passcode, 365);
     }
   }
+  const open_button = document.getElementById('open_button');
+  open_button.addEventListener('click', async _ => {
+    await sendRequest("open")
+  });
+  const stop_button = document.getElementById('stop_button');
+  stop_button.addEventListener('click', async _ => {
+    await sendRequest("stop")
+  });
+  const close_button = document.getElementById('close_button');
+  close_button.addEventListener('click', async _ => {
+    await sendRequest("close")
+  });
+  const light_button = document.getElementById('light_button');
+  light_button.addEventListener('click', async _ => {
+    await sendRequest("light")
+  });
+  const reset_button = document.getElementById('reset_button');
+  reset_button.addEventListener('click', resetPass);
+}
+
+async function  sendRequest(operation){
+  try {
+    const response = await fetch('http://bobalong.uk/garageInterface', {
+      method: 'post',
+      body: JSON.stringify({
+        operation: operation,
+        password: getCookie("passcode"),
+      })
+    });
+
+    if (response.ok){
+      alert("Garage Open");
+    }
+    else {
+      alert("Error")
+    }
+    
+    console.log('Completed!', response);
+  } catch(err) {
+    alert(err);
+    console.error(`Error: ${err}`);
+  }
 }
 
 function setCookie(cname,cvalue,exdays) {
