@@ -1,11 +1,5 @@
 function checkCookie() {
-  let passcode = getCookie("passcode");
-  if (passcode === "") {
-    passcode = prompt("Please enter passcode:","");
-    if (passcode !== "" && passcode != null) {
-      setCookie("passcode", passcode, 365);
-    }
-  }
+
   const open_button = document.getElementById('open_button');
   open_button.addEventListener('click', async _ => {
     await sendRequest("open")
@@ -24,11 +18,20 @@ function checkCookie() {
   });
   const reset_button = document.getElementById('reset_button');
   reset_button.addEventListener('click', resetPass);
+
+
+  let passcode = getCookie("passcode");
+  if (passcode === "") {
+    passcode = prompt("Please enter passcode:","");
+    if (passcode !== "" && passcode != null) {
+      setCookie("passcode", passcode, 365);
+    }
+  }
 }
 
 async function  sendRequest(operation){
   try {
-    const response = await fetch('http://bobalong.uk/garageInterface', {
+    const response = await fetch('http://bobalong.uk/controller', {
       method: 'post',
       body: JSON.stringify({
         operation: operation,
@@ -42,7 +45,7 @@ async function  sendRequest(operation){
     else {
       alert("Error")
     }
-    
+
     console.log('Completed!', response);
   } catch(err) {
     alert(err);
