@@ -10,3 +10,4 @@ services:
     restart: always
     ports:
       - "4321:4321"
+      - "8080:80"
